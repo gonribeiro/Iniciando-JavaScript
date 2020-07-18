@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	
+</head>
+<body>
+	<!-- Navbar -->
+	<nav class="navbar navbar-light bg-light">
+	  <a id="navTitle" class="navbar-brand" href="index.html">
+	    <img src="" width="30" height="30" class="d-inline-block align-top" alt="">
+	  </a>
+	</nav> 
+
+	<!-- Formulário -->
+	<div class="container-fluid">
+		<div class="form-inline">
+			<div class="form-group">
+				<input type="text" class="form-control" id="desc" placeholder="Description" name="">
+			</div>
+			<div class="form-group">
+				<input type="text" class="form-control" id="amount" placeholder="Amount" name="">
+			</div>
+			<div class="form-group">
+				<input type="text" class="form-control" id="value" placeholder="Amount" name="">
+			</div>
+			<span id="btnUpdate" style="display: none;"><!-- Botões só aparecerão quando pedirmos para editar os campos abaixo -->
+				<span id="inputIDUpdate"></span><!-- Recebe a função atualizar campos -->
+				<button onclick="updateData();" class="btn btn-default">Save</button>
+				<button onclick="resetForm();" class="btn btn-default">Cancel</button>
+			</span>
+
+			<span id="btnAdd">
+				<button onclick="addData();" class="btn btn-default">Add</button>
+				<button onclick="resetForm();" class="btn btn-default">Reset</button>
+				<button onclick="deleteList();" class="btn btn-default">Delete List</button>
+			</span>			
+		</div>
+
+		<!-- Popup Error no preenchimento do formulário -->
+		<div><span id="errors" style="display: none;"></span></div>
+
+		<!-- Tabela -->
+		<table id="listTable" class="table">
+
+		</table>
+	</div>
+
+	<!-- Container de resultado -->
+	<nav class="navbar navbar-light bg-light navbar-fixed-bottom">
+	  <div class="container">
+	  	<h4 class="text-center text-success">Total: <span id="totalValue">$ 0,00</span></h4>
+	  </div>
+	</nav>
+
+	<script src="js/config.js"></script> <!-- Tem que ficar no final, depois de todo html. Se ficar acima, não funciona (?) -->
+	<script src="js/main.js"></script>
+</body>
+</html>
